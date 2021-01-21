@@ -38,6 +38,13 @@ func main() {
 	// 	a := [5]int{1, 2, 3, 4, 5} //报错
 	// 	fmt.Println(reverse(a))
 	// }
-	a := []int{1, 2, 3, 4, 5}
-	fmt.Println(a[3:])
+
+	// tmp := make(map[string]int)
+	// tmp["a"] = 1
+
+	// // golang判断key是否在map中
+	// if _, ok := tmp[key]; ok {
+	// //存在
+	// }
+	fmt.Println(tmp["b"])
 }
