@@ -19,5 +19,25 @@ func main() {
 	//    copy(nums, newNums)
 	// }
 
-	fmt.Println(b)
+	// func reverse(a []int) {
+	//   for i, n := 0, len(a); i < n/2; i++ {
+	//       a[i], a[n-1-i] = a[n-1-i], a[i]
+	//   }
+	// }
+
+	// func reverse(array []int) []int {
+	// 	for i, n := 0, len(array); i < n/2; i++ {
+	// 		tmp := array[i]
+	// 		array[i] = array[n-1-i]
+	// 		array[n-1-i] = tmp
+	// 	}
+	// 	return array
+	// }
+	// func main() {
+	// 	a := []int{1, 2, 3, 4, 5}  //正确
+	// 	a := [5]int{1, 2, 3, 4, 5} //报错
+	// 	fmt.Println(reverse(a))
+	// }
+	a := []int{1, 2, 3, 4, 5}
+	fmt.Println(a[3:])
 }
