@@ -39,12 +39,27 @@ func main() {
 	// 	fmt.Println(reverse(a))
 	// }
 
+	// 遍历数组
+	// for _,v := range(a) {
+	// }
+
+	// ********** map **********
 	// tmp := make(map[string]int)
 	// tmp["a"] = 1
+
+	// 遍历map
+	// for k,v := range(tmp) {
+
+	// }
 
 	// // golang判断key是否在map中
 	// if _, ok := tmp[key]; ok {
 	// //存在
 	// }
-	fmt.Println(tmp["b"])
+
+	a := [5]int{1, 2, 3, 4, 5}
+	for _, v := range a {
+		fmt.Println(v)
+	}
+
 }
