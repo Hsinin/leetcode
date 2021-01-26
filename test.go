@@ -57,9 +57,14 @@ func main() {
 	// //存在
 	// }
 
-	a := [5]int{1, 2, 3, 4, 5}
-	for _, v := range a {
-		fmt.Println(v)
-	}
+	// 切片追加
+	// res := []int{}
+	var res []int
+	res = append(res, 1)
+	fmt.Println(res)
+	// a := [5]int{1, 2, 3, 4, 5}
+	// for _, v := range a {
+	// 	fmt.Println(v)
+	// }
 
 }
