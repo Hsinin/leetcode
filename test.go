@@ -58,9 +58,10 @@ func main() {
 	// }
 
 	// 切片追加
-	// res := []int{}
-	var res []int
-	res = append(res, 1)
+	res := [11]int{}
+	// var res []int
+	// res = append(res, 1)
+	res[10] = 1
 	fmt.Println(res)
 	// a := [5]int{1, 2, 3, 4, 5}
 	// for _, v := range a {
