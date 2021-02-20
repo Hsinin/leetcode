@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func main() {
 	// 变量声明
@@ -62,8 +65,8 @@ func main() {
 	// res = append(res, 1)
 
 	// a := [][]int{}
-	b := [3][4]int{{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}}
+	// b := [3][4]int{{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}}
 	// a[1][2] = 3
-	fmt.Println(b[1])
+	fmt.Println(int32(math.Pow(2, 31) - 1))
 
 }
