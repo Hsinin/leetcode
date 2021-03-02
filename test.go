@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"math"
 )
 
 func main() {
@@ -67,6 +66,22 @@ func main() {
 	// a := [][]int{}
 	// b := [3][4]int{{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}}
 	// a[1][2] = 3
-	fmt.Println(int32(math.Pow(2, 31) - 1))
 
+	// str := "abcde"
+	// fmt.Println(str[:5])
+	// for k, _ := range str {
+	// 	fmt.Println(k)
+	// }
+	var a int= 20   /* 声明实际变量 */
+	var ip *int        /* 声明指针变量 */
+
+	ip = &a  /* 指针变量的存储地址 */
+
+	fmt.Printf("a 变量的地址是: %x\n", &a  )
+
+	/* 指针变量的存储地址 */
+	fmt.Printf("ip 变量储存的指针地址: %x\n", ip )
+
+	/* 使用指针访问值 */
+	fmt.Printf("*ip 变量的值: %d\n", *ip )
 }
