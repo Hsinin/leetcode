@@ -29,14 +29,18 @@ func creatList(head *ListNode, arr []int) *ListNode {
 		last.Next = tmp
 		last = last.Next
 	}
-	return head
+	return head.Next
 }
 
 func printList(head *ListNode) {
 	res := []int{}
-	for head.Next != nil {
-		head = head.Next
+	// for head.Next != nil {
+	// 	head = head.Next
+	// 	res = append(res, head.Val)
+	// }
+	for head != nil {
 		res = append(res, head.Val)
+		head = head.Next
 	}
 	Println(res)
 }
@@ -78,7 +82,6 @@ func reverseList1(head *ListNode) *ListNode {
 
 func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 	head := &ListNode{}
-	// var head *ListNode
 	newList := head
 	var tmp *ListNode
 	for l1 != nil && l2 != nil {
@@ -89,7 +92,7 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 			tmp = &ListNode{Val: l2.Val}
 			l2 = l2.Next
 		}
-		newList = tmp
+		newList.Next = tmp
 		newList = newList.Next
 	}
 	if l1 == nil {
@@ -97,21 +100,48 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 	} else {
 		newList.Next = l1
 	}
-	return head.Next
+	return head
+}
+
+func isPalindrome(head *ListNode) *ListNode {
+	slow := head
+	fast := head
+	for fast != nil || fast.Next != nil {
+		slow = slow.Next
+		fast = fast.Next.Next
+	}
+	if fast.Next != nil {
+		fast = fast.Next
+	}
+	var pre *ListNode
+	cur := slow.Next
+	for cur != nil {
+		next := cur.Next
+		cur.Next = pre
+		pre = cur
+		cur = next
+	}
+	slow.Next = pre
+	return head
 }
 
 // @lc code=end
 func main() {
 	head := &ListNode{}
-	arr := []int{}
-	creatList(head, arr)
+	arr := []int{1, 2, 3, 4, 5, 6}
 
-	head1 := &ListNode{}
-	arr1 := []int{2, 3, 4, 5}
-	creatList(head1, arr1)
+	printList(creatList(head, arr))
+	// printList(isPalindrome(head))
 
-	printList(head)
-	printList(head1)
-	printList(mergeTwoLists(head, head1))
+	// head := &ListNode{}
+	// arr := []int{2, 3}
+	// creatList(head, arr)
 
+	// head1 := &ListNode{}
+	// arr1 := []int{1, 2, 3, 4}
+	// creatList(head1, arr1)
+
+	// // printList(head)
+	// // printList(head1)
+	// printList(mergeTwoLists(head.Next, head1.Next))
 }
