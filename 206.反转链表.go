@@ -29,7 +29,7 @@ func creatList(head *ListNode, arr []int) *ListNode {
 		last.Next = tmp
 		last = last.Next
 	}
-	return head.Next
+	return head
 }
 
 func printList(head *ListNode) {
@@ -127,10 +127,14 @@ func isPalindrome(head *ListNode) *ListNode {
 
 // @lc code=end
 func main() {
-	head := &ListNode{}
-	arr := []int{1, 2, 3, 4, 5, 6}
+	// head := &ListNode{}
+	// var head *ListNode
+	var head1 *ListNode
+	head1 = &ListNode{}
+	Println(head1)
+	// arr := []int{1, 2, 3, 4, 5, 6}
 
-	printList(creatList(head, arr))
+	// printList(creatList(head, arr))
 	// printList(isPalindrome(head))
 
 	// head := &ListNode{}

@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 )
 
 func main() {
@@ -72,16 +73,30 @@ func main() {
 	// for k, _ := range str {
 	// 	fmt.Println(k)
 	// }
-	var a int= 20   /* 声明实际变量 */
-	var ip *int        /* 声明指针变量 */
 
-	ip = &a  /* 指针变量的存储地址 */
+	// var a int= 20   /* 声明实际变量 */
+	// var ip *int        /* 声明指针变量 */
 
-	fmt.Printf("a 变量的地址是: %x\n", &a  )
+	// ip = &a  /* 指针变量的存储地址 */
 
-	/* 指针变量的存储地址 */
-	fmt.Printf("ip 变量储存的指针地址: %x\n", ip )
+	// fmt.Printf("a 变量的地址是: %x\n", &a  )
 
-	/* 使用指针访问值 */
-	fmt.Printf("*ip 变量的值: %d\n", *ip )
+	// /* 指针变量的存储地址 */
+	// fmt.Printf("ip 变量储存的指针地址: %x\n", ip )
+
+	// /* 使用指针访问值 */
+	// fmt.Printf("*ip 变量的值: %d\n", *ip )
+
+	str := "3322251"
+	start, end := 0, 0
+	var res string
+	for end < len(str) {
+		for end < len(str) && str[start] == str[end] {
+			end++
+		}
+		res = res + strconv.Itoa(end-start) + string(str[start])
+		start = end
+	}
+	fmt.Printf(res)
+
 }
