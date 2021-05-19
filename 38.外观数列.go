@@ -6,7 +6,7 @@
 
 // @lc code=start
 func countAndSay(n int) string {
-
+	
 }
 // @lc code=end
 
