@@ -17,6 +17,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 )
 
 type Node struct {
@@ -84,6 +85,38 @@ func bfsOrder(node *Node) {
 	}
 }
 
+// func maxDepth(root *Node) int {
+// 	if root != nil {
+// 		if maxDepth(root.Left) > maxDepth(root.Right) {
+// 			return maxDepth(root.Left) + 1
+// 		}
+// 		return maxDepth(root.Right) + 1
+// 	}
+// 	return 0
+// }
+
+// func maxDepth(root *Node) int {
+// 	if root == nil {
+// 		return 0
+// 	}
+// 	return int(math.Max(float64(maxDepth(root.Left)), float64(maxDepth(root.Right)))) + 1
+// }
+
+func maxDepth(root *TreeNode) int {
+	if root == nil {
+		return 0
+	}
+	// return int(math.Max(float64(maxDepth(root.Left)), float64(maxDepth(root.Right)))) + 1
+    return max(maxDepth(root.Left), maxDepth(root.Right)) + 1
+}
+
+func max(a, b) int{
+    if a > b {
+        return a
+    }
+    return b
+}
+
 func main() {
 	root := createNode(6)
 	root.Left = createNode(3)
@@ -99,10 +132,9 @@ func main() {
 	// print(&root)
 	fmt.Println("")
 	bfsOrder(root)
+	fmt.Println("")
+	fmt.Println(maxDepth(root))
+
 }
-
-// func maxDepth(root *TreeNode) int {
-
-// }
 
 // @lc code=end
