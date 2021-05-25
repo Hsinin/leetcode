@@ -7,7 +7,7 @@ package main
 
 import (
 	"fmt"
-	"math"
+	// "math"
 )
 
 // @lc code=start
@@ -37,38 +37,26 @@ func midOrder(root *TreeNode) []int {
 			stack = append(stack, root)
 			root = root.Left
 		}
-
 		root = stack[len(stack)-1]
 		res = append(res, root.Val)
 		stack = stack[:len(stack)-1]
-		if root == nil {
-			res = append(res, math.MinInt64)
-		}
 		root = root.Right
 	}
 	return res
 }
 
+func check(p, q *TreeNode) bool {
+	if q == nil && p == nil {
+		return true
+	}
+	if q == nil || p == nil {
+		return false
+	}
+	return q.Val == p.Val && check(p.Left, q.Right) && check(p.Right, q.Left)
+
+}
 func isSymmetric(root *TreeNode) bool {
-	stack := []*TreeNode{}
-	res := []int{}
-	for len(stack) > 0 || root != nil {
-		for root != nil {
-			stack = append(stack, root)
-			root = root.Left
-		}
-		root = stack[len(stack)-1]
-		res = append(res, root.Val)
-		stack = stack[:len(stack)-1]
-		root = root.Right
-	}
-	fmt.Print(res)
-	for i := 0; i < len(res)/2; i++ {
-		if res[i] != res[len(res)-1-i] {
-			return false
-		}
-	}
-	return true
+	return check(root, root)
 }
 
 // @lc code=end
@@ -89,6 +77,6 @@ func main() {
 	// root.Left.Right = createNode(4)
 	root.Right = createNode(2)
 	root.Right.Left = createNode(2)
-	fmt.Println(midOrder(root))
+	fmt.Println(isSymmetric(root))
 
 }
